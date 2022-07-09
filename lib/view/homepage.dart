@@ -16,6 +16,7 @@ import 'package:provider/provider.dart';
 TextStyle style = TextStyle(color: Colors.white);
 
 class MyApp extends StatelessWidget {
+
   // final CalendarWeekController _controller = CalendarWeekController();
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
 }
 
 class TimelineComponent extends StatelessWidget {
-
+  TextEditingController textEditingController=TextEditingController();
   TimelineComponent({Key key, this.title}) : super(key: key);
 
   final String title;
@@ -233,7 +234,7 @@ class TimelineComponent extends StatelessWidget {
             child:  FloatingActionButton(
               backgroundColor:Color.fromRGBO(47, 128, 237, 1),
             onPressed: (){
-              modelBottomSheetForEventsCreation(context);
+              modelBottomSheetForEventsCreation(context,textEditingController);
             },
             child: IconButton(
               icon: Icon(Icons.add, color: Colors.white,size: 25),

@@ -27,16 +27,16 @@ class DataModel {
   );
 
   Map<String, dynamic> toJson() => {
-    "success": success,
+
     "data": List<dynamic>.from(data.map((x) => x.toJson())),
-    "msg": msg,
-    "errors": List<dynamic>.from(errors.map((x) => x)),
+
+
   };
 }
 
 class Datum {
   Datum({
-    this.id,
+
     this.name,
     this.phoneNumber,
     this.startTime,
@@ -44,7 +44,7 @@ class Datum {
     this.date,
   });
 
-  String id;
+
   String name;
   String phoneNumber;
   String startTime;
@@ -52,7 +52,7 @@ class Datum {
   String date;
 
   factory Datum.fromJson(Map<String, dynamic> json) => Datum(
-    id: json["_id"],
+
     name: json["name"],
     phoneNumber: json["phoneNumber"],
     startTime: json["startTime"],
@@ -61,7 +61,7 @@ class Datum {
   );
 
   Map<String, dynamic> toJson() => {
-    "_id": id,
+
     "name": name,
     "phoneNumber": phoneNumber,
     "startTime": startTime,
