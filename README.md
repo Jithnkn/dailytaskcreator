@@ -4,7 +4,8 @@ A new Flutter application.
 
 ## Getting Started
 
-run using fvm flutter run
+run using fvm flutter run(flutter sdk version 2.8.0)
+
 
 This project is a starting point for a Flutter application.
 
