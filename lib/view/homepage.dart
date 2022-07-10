@@ -2,6 +2,8 @@ import 'dart:ffi';
 import 'dart:math';
 
 import 'package:daily_task_creator/resources/get_schedule.dart';
+import 'package:daily_task_creator/resources/timeAndDatePicker.dart';
+import 'package:daily_task_creator/view/widget/alertdialog.dart';
 import 'package:daily_task_creator/view/widget/bottomsheet.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +22,7 @@ class MyApp extends StatelessWidget {
   // final CalendarWeekController _controller = CalendarWeekController();
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Timeline',
@@ -48,6 +51,7 @@ class TimelineComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.read<GetScheduledEventsBloc>().retrieveEvents(context,DateTime.now());
     Size size = MediaQuery.of(context).size;
     Random random = new Random();
     return Scaffold(
@@ -235,6 +239,7 @@ class TimelineComponent extends StatelessWidget {
               backgroundColor:Color.fromRGBO(47, 128, 237, 1),
             onPressed: (){
               modelBottomSheetForEventsCreation(context,textEditingController);
+
             },
             child: IconButton(
               icon: Icon(Icons.add, color: Colors.white,size: 25),

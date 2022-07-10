@@ -1,6 +1,8 @@
 import 'package:daily_task_creator/model/events.dart';
+import 'package:daily_task_creator/model/postEventsModel.dart';
 import 'package:daily_task_creator/resources/get_schedule.dart';
 import 'package:daily_task_creator/resources/timeAndDatePicker.dart';
+import 'package:daily_task_creator/view/widget/alertdialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -177,15 +179,23 @@ TextEditingController textEditingControllers= TextEditingController();
                           onSurface: Colors.grey,
                         ),
                         onPressed: () {
-                          Datum datum=Datum(name:textEditingControllers.text,
-                          phoneNumber: "6282920065",
-                            startTime: getScheduledDateAndPicker.startingTime.format(context),
-                            endTime: getScheduledDateAndPicker.endingTime.format(context),
-                            date:DateFormat('dd/MM/yyyy').format(getScheduledDateAndPicker.dateTime).toString()
-
+                          PostModel postModel=PostModel(
+                              name:textEditingControllers.text,
+                              phoneNumber: "6282920065",
+                              startTime: getScheduledDateAndPicker.startingTime.format(context),
+                              endTime: getScheduledDateAndPicker.endingTime.format(context),
+                              date:DateFormat('dd/MM/yyyy').format(getScheduledDateAndPicker.dateTime).toString()
                           );
-                          getScheduledDateAndPicker.postingData(context,datum);
+
+                          getScheduledDateAndPicker.postingData(context,postModel.toJson());
+
+                          // showAlertDialog(context, getScheduledDateAndPicker.successes)
                           Navigator.pop(context);
+
+                          // showAlertDialog(context);
+
+
+
                         },
                       ),
                     ),

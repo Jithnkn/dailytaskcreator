@@ -19,7 +19,7 @@ class GetAndPostEventsProvider{
 }
 Future<DataModel> postEvents(body)async{
     final response=await http.post(postUrl,
-    body: jsonEncode(body)
+    body: body
     );
     if(response.statusCode==200){
       return DataModel.fromJson(jsonDecode(response.body));
