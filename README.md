@@ -1,10 +1,9 @@
 # daily_task_creator
 
-A new Flutter application.
 
-## Getting Started
 
-run using fvm flutter run(flutter sdk version 2.8.0)
+#run using fvm flutter run(flutter sdk version 2.8.0)
+#null safety is not implemented
 
 
 This project is a starting point for a Flutter application.

@@ -27,19 +27,17 @@ showAlertDialog(BuildContext context,success) {
     builder: (BuildContext context) {
 
 
-          return success?AlertDialog(
-            title: Text("Successes"),
-            content: Text("New Event Created Successfully"),
-            actions: [
-              okButton,
-            ],
-          ):AlertDialog(
-            title: Text("Failed"),
-            content: Text("This is my message."),
-            actions: [
-              okButton,
-            ],
-          );
+          return FutureBuilder<bool>(
+              future: success,
+              builder:( BuildContext context,snapshot){
+
+              if(snapshot.data){
+                return null;
+              }
+              else{
+                return alert;
+              }
+          } );
         }
       );
 

@@ -1,6 +1,7 @@
 // import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:daily_task_creator/model/events.dart';
+import 'package:daily_task_creator/model/postResponse.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 
@@ -12,6 +13,8 @@ class GetScheduledEventsBloc extends ChangeNotifier{
    List scheduledName=[];
    List scheduledStartTime=[];
    List scheduledEndTime=[];
+   Future<DataResponse> responseFromPost;
+   bool  successes=true;
 
   updateFocusedDate(context,dateAndTime){
     dateTime=dateAndTime;
@@ -40,6 +43,11 @@ class GetScheduledEventsBloc extends ChangeNotifier{
     });
 
 
+
+  }
+  setResponse(context,response){
+    successes=response;
+    notifyListeners();
 
   }
 }
