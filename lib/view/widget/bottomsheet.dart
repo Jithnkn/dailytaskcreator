@@ -14,7 +14,7 @@ FocusNode focusNode1=FocusNode();
 // GetScheduledDateAndPicker dataProvider = Provider.of<DataProvider>(context);
 
 
- modelBottomSheetForEventsCreation(context,getSchedule){
+ modelBottomSheetForEventsCreation(context){
   // GetScheduledTimeAndDatePicker getScheduledEventsBlocs=Provider.of(context,listen: false);
    return showModalBottomSheet(
        isScrollControlled: true,

@@ -52,7 +52,7 @@ class TimelineComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     context.read<GetScheduledEventsBloc>().retrieveEvents(context,DateTime.now());
-    GetScheduledEventsBloc getScheduledEventsBloc=Provider.of<GetScheduledEventsBloc>(context);
+   // GetScheduledEventsBloc getScheduledEventsBloc=Provider.of<GetScheduledEventsBloc>(context);
     Size size = MediaQuery.of(context).size;
     Random random = new Random();
     return Scaffold(
@@ -241,7 +241,7 @@ class TimelineComponent extends StatelessWidget {
               backgroundColor:Color.fromRGBO(47, 128, 237, 1),
             onPressed: (){
                 context.read<GetScheduledTimeAndDatePicker>().setSuccess(context);
-              modelBottomSheetForEventsCreation(context,getScheduledEventsBloc);
+              modelBottomSheetForEventsCreation(context);
 
             },
             child: IconButton(
